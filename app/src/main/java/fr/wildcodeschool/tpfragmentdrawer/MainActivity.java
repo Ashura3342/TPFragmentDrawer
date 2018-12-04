@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.content_home, fragment);
         transaction.commit();
-        //setTitle(R.string.);
         //add ne sert a rien autant mettre replace tout le temps????
     }
 

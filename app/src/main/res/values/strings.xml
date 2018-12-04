@@ -12,9 +12,12 @@
     <string name="helloHome">Hello Home fragment</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="helloCategory">Hello Category fragment</string>
-    <string name="homeTitle">Home</string>
-    <string name="categoryTitle">Category</string>
-    <string name="itemTitle">Item</string>
-    <string name="aboutTitle">About</string>
+    <string name="hello_category">Hello Category fragment</string>
+    <string name="home_title">Home</string>
+    <string name="category_title">Category</string>
+    <string name="item_title">Item</string>
+    <string name="about_title">About</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
