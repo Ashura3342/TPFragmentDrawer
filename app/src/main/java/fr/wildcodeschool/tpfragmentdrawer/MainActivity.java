@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity
 
     public void setFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.content_home, fragment);
+        transaction.replace(R.id.content_home, fragment);
         transaction.commit();
         //add ne sert a rien autant mettre replace tout le temps????
     }
