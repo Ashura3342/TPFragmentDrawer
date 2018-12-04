@@ -7,23 +7,23 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Home" />
+            android:title="@string/home_title" />
         <item
             android:id="@+id/nav_category"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Category" />
+            android:title="@string/category_title" />
         <item
             android:id="@+id/nav_item"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Item" />
+            android:title="@string/item_title" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/communicate">
         <menu>
            <item
                 android:id="@+id/nav_about"
                 android:icon="@drawable/ic_menu_send"
-                android:title="About" />
+                android:title="@string/about_title" />
         </menu>
     </item>
 
