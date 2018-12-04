@@ -12,7 +12,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import fr.wildcodeschool.tpfragmentdrawer.fragments.AboutFragment;
+import fr.wildcodeschool.tpfragmentdrawer.fragments.CategoryFragment;
 import fr.wildcodeschool.tpfragmentdrawer.fragments.HomeFragment;
+import fr.wildcodeschool.tpfragmentdrawer.fragments.ItemFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -84,12 +87,16 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             setFragment(new HomeFragment());
+            setTitle(R.string.home_title);
         } else if (id == R.id.nav_category) {
             setFragment(new CategoryFragment());
+            setTitle(R.string.category_title);
         } else if (id == R.id.nav_item) {
             setFragment(new ItemFragment());
+            setTitle(R.string.item_title);
         } else if (id == R.id.nav_about) {
             setFragment(new AboutFragment());
+            setTitle(R.string.about_title);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
