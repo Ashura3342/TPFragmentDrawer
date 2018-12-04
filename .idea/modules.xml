@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DOJO_burgerMenu.iml" filepath="$PROJECT_DIR$/DOJO_burgerMenu.iml" />
       <module fileurl="file://$PROJECT_DIR$/TPFragmentDrawer.iml" filepath="$PROJECT_DIR$/TPFragmentDrawer.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

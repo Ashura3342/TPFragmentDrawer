@@ -34,12 +34,15 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         setFragment(new HomeFragment());
+
     }
 
     public void setFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.content_home, fragment);
         transaction.commit();
+        //setTitle(R.string.);
+        //add ne sert a rien autant mettre replace tout le temps????
     }
 
     @Override
