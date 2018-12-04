@@ -12,7 +12,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import fr.wildcodeschool.tpfragmentdrawer.fragments.CategoryFragment;
 import fr.wildcodeschool.tpfragmentdrawer.fragments.HomeFragment;
+import fr.wildcodeschool.tpfragmentdrawer.fragments.ItemFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        setTitle(R.string.home_title);
         setFragment(new HomeFragment());
 
     }
@@ -41,6 +44,7 @@ public class MainActivity extends AppCompatActivity
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.content_home, fragment);
         transaction.commit();
+        //setTitle(R.string.);
         //add ne sert a rien autant mettre replace tout le temps????
     }
 
@@ -85,11 +89,13 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-
+            setTitle(R.string.category_title);
+            setFragment(new CategoryFragment());
         } else if (id == R.id.nav_slideshow) {
-
+            setTitle(R.string.item_title);
+            setFragment(new ItemFragment());
         } else if (id == R.id.nav_manage) {
-
+            
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
