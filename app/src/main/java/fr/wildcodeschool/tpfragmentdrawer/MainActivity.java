@@ -12,10 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import fr.wildcodeschool.tpfragmentdrawer.fragments.AboutFragment;
-import fr.wildcodeschool.tpfragmentdrawer.fragments.CategoryFragment;
 import fr.wildcodeschool.tpfragmentdrawer.fragments.HomeFragment;
-import fr.wildcodeschool.tpfragmentdrawer.fragments.ItemFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
