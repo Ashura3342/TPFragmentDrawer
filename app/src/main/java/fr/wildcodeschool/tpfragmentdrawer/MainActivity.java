@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity
 
     static class PageNavigation {
         private int title;
-        private Class fragment;
+        private Fragment fragment;
 
-        PageNavigation(int title, Class fragment) {
+        PageNavigation(int title, Fragment fragment) {
             this.title = title;
             this.fragment = fragment;
         }
@@ -35,23 +35,18 @@ public class MainActivity extends AppCompatActivity
             return title;
         }
 
-        public Class getFragment() {
+        public Fragment getFragment() {
             return fragment;
         }
-
-        Fragment invoke() throws InstantiationException, IllegalAccessException {
-            return (Fragment) fragment.newInstance();
-        }
     }
-
 
     private static final SparseArray<PageNavigation> mapNavigation = new SparseArray<>();
 
     static {
-        mapNavigation.put(R.id.nav_home, new PageNavigation(R.string.home_title, HomeFragment.class));
-        mapNavigation.put(R.id.nav_about, new PageNavigation(R.string.about_title, AboutFragment.class));
-        mapNavigation.put(R.id.nav_category, new PageNavigation(R.string.category_title, CategoryFragment.class));
-        mapNavigation.put(R.id.nav_item, new PageNavigation(R.string.item_title, HomeFragment.class));
+        mapNavigation.put(R.id.nav_home, new PageNavigation(R.string.home_title, new HomeFragment()));
+        mapNavigation.put(R.id.nav_about, new PageNavigation(R.string.about_title, new AboutFragment()));
+        mapNavigation.put(R.id.nav_category, new PageNavigation(R.string.category_title, new CategoryFragment()));
+        mapNavigation.put(R.id.nav_item, new PageNavigation(R.string.item_title, new HomeFragment()));
     }
 
     @Override
@@ -70,20 +65,14 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        try {
-            navigationToPage(R.id.nav_home);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        }
+        navigationToPage(R.id.nav_home);
     }
 
-    public void navigationToPage(int id) throws IllegalAccessException, InstantiationException {
+    public void navigationToPage(int id) {
         PageNavigation pageNavigation = mapNavigation.get(id);
         if (pageNavigation != null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.content_home, pageNavigation.invoke());
+            transaction.replace(R.id.content_home, pageNavigation.getFragment());
             transaction.commit();
             setTitle(pageNavigation.getTitle());
         }
@@ -127,13 +116,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        try {
-            navigationToPage(id);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        }
+        navigationToPage(id);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
